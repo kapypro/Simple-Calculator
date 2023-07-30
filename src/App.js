@@ -10,17 +10,16 @@ function App() {
     setResult("");
   };
   const handledeletelast = () => {
-setResult(result.slice(0,-1))
+    setResult(result.slice(0, -1));
   };
-  const handleCalculate = ()=>{
-    try{
-
-      setResult(eval(result).toString())
+  const handleCalculate = () => {
+    try {
+      const final = eval(result)
+      setResult(final.toString());
+    } catch {
+      setResult("Invalid");
     }
-    catch{
-      setResult("Invalid")
-    }
-  }
+  };
   return (
     <div className="calbody">
       <div className="screen">{result}</div>
